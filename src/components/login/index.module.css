@@ -1,0 +1,451 @@
+* {
+  box-sizing: border-box;
+}
+.flex-row {
+  flex-direction: row;
+  display: flex;
+}
+.flex-col {
+  flex-direction: column;
+  display: flex;
+}
+.justify-start {
+  justify-content: flex-start;
+  display: flex;
+}
+.justify-center {
+  justify-content: center;
+  display: flex;
+}
+.justify-end {
+  justify-content: flex-end;
+  display: flex;
+}
+.justify-between {
+  justify-content: space-between;
+  display: flex;
+}
+.items-start {
+  align-items: flex-start;
+  display: flex;
+}
+.items-end {
+  align-items: flex-end;
+  display: flex;
+}
+.items-center {
+  align-items: center;
+  display: flex;
+}
+.no-shrink {
+  flex-shrink: 0;
+}
+
+/* Feature component styles */
+.feature_1_1 {
+  color: #fff;
+  white-space: pre;
+  align-items: center;
+  gap: 12px;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19.2px;
+  display: flex;
+}
+.package {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  position: relative;
+}
+.text {
+  flex-grow: 1;
+  width: 0;
+}
+
+/* LoginPage component styles */
+.login_container {
+  border-radius: 0;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  position: relative;
+  box-shadow: none;
+}
+.left_section {
+  background: linear-gradient(211.77deg, #8b5cf6 14.64%, #3b82f6 85.36%);
+  border-radius: 0;
+  flex-direction: column;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: flex-start;
+  width: 50%;
+  height: 100vh;
+  padding: 40px;
+  display: flex;
+  position: relative;
+}
+.brand_section {
+  flex-direction: column;
+  flex-shrink: 0;
+  justify-content: center;
+  align-self: stretch;
+  align-items: flex-start;
+  gap: 24px;
+  display: flex;
+  position: relative;
+}
+.logo {
+  background-color: #fff;
+  border-radius: 20px;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  position: relative;
+}
+.shopping_bag {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  position: relative;
+}
+.features {
+  flex-direction: column;
+  flex-shrink: 0;
+  align-self: stretch;
+  align-items: flex-start;
+  gap: 16px;
+  display: flex;
+  position: relative;
+}
+.feature_1,
+.feature_2,
+.feature_3,
+.feature_4 {
+  flex-shrink: 0;
+  align-self: stretch;
+  position: relative;
+}
+.brand_text {
+  flex-direction: column;
+  flex-shrink: 0;
+  align-items: flex-start;
+  gap: 8px;
+  width: 320px;
+  display: flex;
+  position: absolute;
+  top: 16px;
+  left: auto;
+  right: -55px;
+}
+.text_4 {
+  text-align: center;
+  color: #fff;
+  white-space: pre;
+  flex-shrink: 0;
+  align-self: stretch;
+  font-family: Playfair Display;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 38.4px;
+}
+.text_5 {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.89);
+  white-space: pre;
+  flex-shrink: 0;
+  align-self: stretch;
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.8px;
+}
+.right_section {
+  background-color: #fff;
+  border-radius: 0;
+  flex-direction: column;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: flex-start;
+  width: 50%;
+  height: 100vh;
+  padding: 48px;
+  display: flex;
+  position: relative;
+}
+.login_form {
+  flex-direction: column;
+  flex-shrink: 0;
+  align-self: stretch;
+  align-items: flex-start;
+  gap: 32px;
+  display: flex;
+  position: relative;
+}
+.form_header {
+  flex-direction: column;
+  flex-shrink: 0;
+  align-self: stretch;
+  align-items: flex-start;
+  gap: 12px;
+  display: flex;
+  position: relative;
+}
+.text_6 {
+  color: #111827;
+  white-space: pre;
+  flex-shrink: 0;
+  align-self: stretch;
+  font-family: Playfair Display;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 43.2px;
+}
+.text_7 {
+  color: #6b7280;
+  white-space: pre;
+  flex-shrink: 0;
+  align-self: stretch;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+.form_fields {
+  flex-direction: column;
+  flex-shrink: 0;
+  align-self: stretch;
+  align-items: flex-start;
+  gap: 24px;
+  display: flex;
+  position: relative;
+}
+.username_field {
+  flex-direction: column;
+  flex-shrink: 0;
+  align-self: stretch;
+  align-items: flex-start;
+  gap: 8px;
+  display: flex;
+  position: relative;
+}
+.text_8 {
+  color: #374151;
+  white-space: pre;
+  flex-shrink: 0;
+  align-self: stretch;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19.2px;
+}
+.username_input {
+  color: #111827;
+  white-space: pre;
+  background-color: #fff;
+  border: 1.5px solid #d1d5db;
+  border-radius: 12px;
+  flex-shrink: 0;
+  align-self: stretch;
+  align-items: center;
+  gap: 12px;
+  height: 56px;
+  padding-left: 18.5px;
+  padding-right: 18.5px;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19.2px;
+  display: flex;
+  position: relative;
+}
+.user {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  position: relative;
+}
+.text_9 {
+  text-overflow: ellipsis;
+  flex-grow: 1;
+  width: 0;
+  overflow: hidden;
+}
+.password_field {
+  flex-direction: column;
+  flex-shrink: 0;
+  align-self: stretch;
+  align-items: flex-start;
+  gap: 8px;
+  display: flex;
+  position: relative;
+}
+.text_10 {
+  color: #374151;
+  white-space: pre;
+  flex-shrink: 0;
+  align-self: stretch;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19.2px;
+}
+.password_input {
+  background-color: #fff;
+  border: 1.5px solid #d1d5db;
+  border-radius: 12px;
+  flex-shrink: 0;
+  justify-content: space-between;
+  align-self: stretch;
+  align-items: center;
+  height: 56px;
+  padding-left: 18.5px;
+  padding-right: 18.5px;
+  display: flex;
+  position: relative;
+}
+.password_left {
+  color: #111827;
+  white-space: pre;
+  flex-grow: 1;
+  align-items: center;
+  gap: 12px;
+  width: 0;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19.2px;
+  display: flex;
+  position: relative;
+}
+.lock {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  position: relative;
+}
+.text_11 {
+  flex-grow: 1;
+  width: 0;
+}
+.eye_off {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  position: relative;
+}
+.form_options {
+  flex-shrink: 0;
+  justify-content: space-between;
+  align-self: stretch;
+  align-items: center;
+  display: flex;
+  position: relative;
+}
+.remember_me {
+  color: #6b7280;
+  white-space: pre;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 8px;
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16.8px;
+  display: flex;
+  position: relative;
+}
+.checkbox {
+  background-color: #3b82f6;
+  border-radius: 4px;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  position: relative;
+}
+.check {
+  flex-shrink: 0;
+  width: 12px;
+  height: 12px;
+  margin: 0;
+  position: relative;
+}
+.text_12 {
+  flex-shrink: 0;
+}
+.text_13 {
+  color: #3b82f6;
+  white-space: pre;
+  flex-shrink: 0;
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16.8px;
+}
+.form_actions {
+  text-align: center;
+  color: #fff;
+  white-space: pre;
+  flex-direction: column;
+  flex-shrink: 0;
+  align-self: stretch;
+  align-items: flex-start;
+  gap: 16px;
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 21.6px;
+  display: flex;
+  position: relative;
+}
+.text_14 {
+  background-color: #3b82f6;
+  border-radius: 12px;
+  flex-shrink: 0;
+  justify-content: center;
+  align-self: stretch;
+  align-items: center;
+  height: 56px;
+  padding: 0;
+  display: flex;
+}
+.footer_text {
+  text-align: center;
+  white-space: pre;
+  flex-direction: column;
+  flex-shrink: 0;
+  align-items: flex-start;
+  gap: 8px;
+  width: auto;
+  padding: 0;
+  line-height: 14.4px;
+  display: flex;
+  position: absolute;
+  top: auto;
+  bottom: -82px;
+  left: 10px;
+  right: -10px;
+}
+.text_15,
+.text_16,
+.text_17 {
+  color: #9ca3af;
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14.4px;
+}
