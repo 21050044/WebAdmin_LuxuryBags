@@ -81,22 +81,35 @@ const SalesPage = () => {
       const result = await getExportData(params);
 
       if (result.success && result.data.length > 0) {
-        // Convert JSON to CSV
-        const headers = Object.keys(result.data[0]);
-        const csvContent = [
-          headers.join(','),
-          ...result.data.map(row => headers.map(fieldName => `"${row[fieldName]}"`).join(','))
-        ].join('\n');
+        // Dynamically import xlsx library
+        const XLSX = await import('xlsx');
 
-        // Create blob and download
-        const blob = new Blob(["\ufeff" + csvContent], { type: 'text/csv;charset=utf-8;' });
-        const url = URL.createObjectURL(blob);
-        const link = document.createElement('a');
-        link.href = url;
-        link.setAttribute('download', `bao_cao_doanh_thu_${dateRange.from}_${dateRange.to}.csv`);
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+        // Create worksheet from JSON data
+        const worksheet = XLSX.utils.json_to_sheet(result.data);
+
+        // Set column widths for better readability
+        const columnWidths = [
+          { wch: 18 },  // Mã HĐ
+          { wch: 18 },  // Ngày GD
+          { wch: 20 },  // Khách Hàng
+          { wch: 12 },  // SĐT
+          { wch: 15 },  // Tổng Tiền
+          { wch: 12 },  // Giảm Giá
+          { wch: 15 },  // Thực Thu
+          { wch: 12 },  // Loại Đơn
+          { wch: 12 },  // Người Tạo
+        ];
+        worksheet['!cols'] = columnWidths;
+
+        // Create workbook and add worksheet
+        const workbook = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(workbook, worksheet, 'Báo cáo doanh thu');
+
+        // Generate filename from API response or default
+        const fileName = result.fileName || `Bao_Cao_Doanh_Thu_${dateRange.from}_${dateRange.to}.xlsx`;
+
+        // Download file
+        XLSX.writeFile(workbook, fileName);
       } else {
         alert('Không có dữ liệu để xuất hoặc lỗi API');
       }
@@ -164,7 +177,7 @@ const SalesPage = () => {
             </div>
             <button className={styles.exportBtn} onClick={handleExport}>
               <Icon name="download" size={18} />
-              Xuất báo cáo (.csv)
+              Xuất báo cáo (.xlsx)
             </button>
           </div>
         </header>

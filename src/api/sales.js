@@ -109,10 +109,15 @@ export const getExportData = async (params = {}) => {
             headers: { 'Authorization': `Bearer ${token}` }
         });
 
-        const data = await response.json();
-        if (!response.ok) throw new Error(data.error || 'Lỗi lấy dữ liệu xuất Excel');
+        const responseData = await response.json();
+        if (!response.ok) throw new Error(responseData.error || 'Lỗi lấy dữ liệu xuất Excel');
 
-        return { success: true, data: data.export_data || [] }; // API trả về { success: true, export_data: [...] }
+        // API mới trả về { success: true, file_name: '...', data: [...] }
+        return {
+            success: true,
+            data: responseData.data || [],
+            fileName: responseData.file_name || `Bao_Cao_Doanh_Thu.xlsx`
+        };
     } catch (error) {
         return { success: false, error: error.message };
     }

@@ -7,6 +7,7 @@ const LoginPage = () => {
   const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
@@ -14,14 +15,14 @@ const LoginPage = () => {
     // Reset error
     setError('');
 
-    // Validation
+    // E2: Validation - kiểm tra dữ liệu trống
     if (!username.trim()) {
-      setError('Vui lòng nhập tên đăng nhập');
+      setError('Vui lòng không để trống tên đăng nhập.');
       return;
     }
 
     if (!password.trim()) {
-      setError('Vui lòng nhập mật khẩu');
+      setError('Vui lòng không để trống mật khẩu.');
       return;
     }
 
@@ -31,6 +32,20 @@ const LoginPage = () => {
       const result = await login(username, password);
 
       if (result.success) {
+        // E3: Kiểm tra tài khoản bị khóa (is_active = false)
+        if (result.data.is_active === false) {
+          setError('Tài khoản của bạn đã bị khóa. Vui lòng liên hệ quản trị viên.');
+          setLoading(false);
+          return;
+        }
+
+        // Chặn vai trò CUSTOMER không được đăng nhập vào hệ thống quản lý
+        if (result.data.role === 'CUSTOMER') {
+          setError('Tài khoản khách hàng không có quyền truy cập hệ thống quản lý.');
+          setLoading(false);
+          return;
+        }
+
         // Lưu token vào localStorage
         localStorage.setItem('access_token', result.data.access);
         localStorage.setItem('refresh_token', result.data.refresh);
@@ -52,7 +67,21 @@ const LoginPage = () => {
           navigate('/home', { replace: true });
         }
       } else {
-        setError(result.error || 'Đăng nhập thất bại. Vui lòng thử lại.');
+        // E1 & E3: Xử lý các lỗi từ API
+        const errorMsg = result.error?.toLowerCase() || '';
+
+        // Kiểm tra nếu là lỗi tài khoản bị khóa từ backend
+        if (errorMsg.includes('khóa') || errorMsg.includes('locked') || errorMsg.includes('inactive') || errorMsg.includes('is_active')) {
+          setError('Tài khoản của bạn đã bị khóa. Vui lòng liên hệ quản trị viên.');
+        }
+        // E1: Sai tên đăng nhập hoặc mật khẩu
+        else if (errorMsg.includes('credentials') || errorMsg.includes('password') || errorMsg.includes('username') || errorMsg.includes('not found') || errorMsg.includes('invalid') || errorMsg.includes('incorrect') || errorMsg.includes('401')) {
+          setError('Tên đăng nhập hoặc mật khẩu không chính xác.');
+        }
+        // Lỗi khác
+        else {
+          setError(result.error || 'Đăng nhập thất bại. Vui lòng thử lại.');
+        }
       }
     } catch (err) {
       setError('Đã xảy ra lỗi. Vui lòng thử lại sau.');
@@ -408,7 +437,7 @@ const LoginPage = () => {
             <div className="input-wrapper">
               <img src="https://img.icons8.com/ios/50/9ca3af/lock--v1.png" className="field-icon" alt="lock" />
               <input
-                type="password"
+                type={showPassword ? "text" : "password"}
                 className="input-field"
                 placeholder="••••••••"
                 value={password}
@@ -419,7 +448,13 @@ const LoginPage = () => {
                   }
                 }}
               />
-              <img src="https://img.icons8.com/ios/50/9ca3af/hide.png" className="toggle-password" alt="view" />
+              <img
+                src={showPassword ? "https://img.icons8.com/ios/50/9ca3af/visible.png" : "https://img.icons8.com/ios/50/9ca3af/hide.png"}
+                className="toggle-password"
+                alt="toggle password"
+                onClick={() => setShowPassword(!showPassword)}
+                style={{ cursor: 'pointer' }}
+              />
             </div>
           </div>
 

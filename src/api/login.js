@@ -37,6 +37,7 @@ export const login = async (username, password) => {
         full_name: data.full_name,
         role: data.role,
         is_admin: data.is_admin,
+        is_active: data.is_active, // Thêm trường is_active để kiểm tra tài khoản bị khóa
       },
     };
   } catch (error) {

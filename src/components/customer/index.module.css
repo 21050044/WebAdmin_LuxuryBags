@@ -25,7 +25,7 @@
   align-items: center;
   gap: 8px;
   padding: 12px 24px;
-  background: #000;
+  background: #7c3aed;
   color: white;
   border: none;
   border-radius: 8px;
@@ -36,7 +36,7 @@
 }
 
 .addButton:hover {
-  background: #333;
+  background: #6d28d9;
   transform: translateY(-1px);
 }
 
@@ -292,7 +292,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px 24px;
-  background: #1f2937;
+  background: linear-gradient(135deg, #7c3aed, #6d28d9);
   border-radius: 16px 16px 0 0;
 }
 
@@ -392,13 +392,13 @@
 }
 
 .saveButton {
-  background: #1f2937;
+  background: #7c3aed;
   border: none;
   color: white;
 }
 
 .saveButton:hover {
-  background: #374151;
+  background: #6d28d9;
 }
 
 /* Responsive */

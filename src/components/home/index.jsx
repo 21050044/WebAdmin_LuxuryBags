@@ -371,19 +371,6 @@ const HomePage = () => {
             </p>
           </div>
           <div className={styles.headerRight}>
-            <button
-              className={`${styles.refreshBtn} ${refreshing ? styles.spinning : ''}`}
-              onClick={handleRefresh}
-              disabled={refreshing}
-            >
-              <Icon name="refresh" size={16} />
-              {refreshing ? 'Đang tải...' : 'Làm mới'}
-            </button>
-            {lastUpdated && (
-              <span className={styles.lastUpdated}>
-                Cập nhật: {formatTime(lastUpdated)}
-              </span>
-            )}
             <div className={styles.userAvatar}>
               {(userInfo?.ho_va_ten || userInfo?.username || 'U').charAt(0).toUpperCase()}
             </div>
@@ -539,16 +526,17 @@ const HomePage = () => {
                 </h3>
                 {bestSellersPieData.length > 0 ? (
                   <div className={styles.revenuePieContainer}>
-                    <ResponsiveContainer width={180} height={180}>
+                    <ResponsiveContainer width={160} height={160}>
                       <PieChart>
                         <Pie
                           data={bestSellersPieData}
                           cx="50%"
                           cy="50%"
-                          innerRadius={50}
-                          outerRadius={75}
-                          paddingAngle={3}
+                          innerRadius={0}
+                          outerRadius={70}
                           dataKey="value"
+                          stroke="#fff"
+                          strokeWidth={1}
                         >
                           {bestSellersPieData.map((entry, index) => (
                             <Cell key={`cell-${index}`} fill={entry.color} />
@@ -584,16 +572,17 @@ const HomePage = () => {
               </h3>
               {slowSellersPieData.length > 0 ? (
                 <div className={styles.revenuePieContainer}>
-                  <ResponsiveContainer width={180} height={180}>
+                  <ResponsiveContainer width={160} height={160}>
                     <PieChart>
                       <Pie
                         data={slowSellersPieData}
                         cx="50%"
                         cy="50%"
-                        innerRadius={50}
-                        outerRadius={75}
-                        paddingAngle={3}
+                        innerRadius={0}
+                        outerRadius={70}
                         dataKey="value"
+                        stroke="#fff"
+                        strokeWidth={1}
                       >
                         {slowSellersPieData.map((entry, index) => (
                           <Cell key={`cell-${index}`} fill={entry.color} />
