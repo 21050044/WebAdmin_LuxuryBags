@@ -11,8 +11,9 @@ const getAuthToken = () => {
 // Helper function để tạo headers với Bearer Token
 const getAuthHeaders = (isMultipart = false) => {
   const token = getAuthToken();
-  const headers = {};
-
+  const headers = {
+    'ngrok-skip-browser-warning': 'true',
+  };
   // Nếu không phải multipart (upload file), set Content-Type là json
   // Nếu là multipart, để browser tự set boundary
   if (!isMultipart) {

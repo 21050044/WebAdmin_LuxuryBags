@@ -25,6 +25,8 @@ export const getSalesOverview = async (params = {}) => {
             headers: {
                 'Authorization': `Bearer ${token}`,
                 'Content-Type': 'application/json',
+                'ngrok-skip-browser-warning': 'true',
+                
             },
         });
 
@@ -52,7 +54,9 @@ export const getRevenueChart = async (params = {}) => {
 
         const response = await fetch(url.toString(), {
             method: 'GET',
-            headers: { 'Authorization': `Bearer ${token}` }
+            headers: { 
+                    'Authorization': `Bearer ${token}`,
+                    'ngrok-skip-browser-warning': 'true', }
         });
 
         const data = await response.json();
@@ -79,7 +83,9 @@ export const getCategoryChart = async (params = {}) => {
 
         const response = await fetch(url.toString(), {
             method: 'GET',
-            headers: { 'Authorization': `Bearer ${token}` }
+            headers: { 
+                    'Authorization': `Bearer ${token}`,
+                    'ngrok-skip-browser-warning': 'true', }
         });
 
         const data = await response.json();
@@ -106,7 +112,9 @@ export const getExportData = async (params = {}) => {
 
         const response = await fetch(url.toString(), {
             method: 'GET',
-            headers: { 'Authorization': `Bearer ${token}` }
+            headers: { 
+                    'Authorization': `Bearer ${token}`,
+                    'ngrok-skip-browser-warning': 'true', }
         });
 
         const responseData = await response.json();
@@ -146,6 +154,7 @@ export const getOrders = async (params = {}) => {
             headers: {
                 'Authorization': `Bearer ${token}`,
                 'Content-Type': 'application/json',
+                'ngrok-skip-browser-warning': 'true',
             },
         });
 
@@ -187,6 +196,7 @@ export const getOrderDetail = async (orderId) => {
             headers: {
                 'Authorization': `Bearer ${token}`,
                 'Content-Type': 'application/json',
+                'ngrok-skip-browser-warning': 'true',
             },
         });
 

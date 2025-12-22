@@ -15,6 +15,7 @@ export const getStaffCollection = async () => {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${accessToken}`,
+                'ngrok-skip-browser-warning': 'true',
             },
         });
 
@@ -51,6 +52,7 @@ export const saveToCollection = async (imageFile, note = '') => {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${accessToken}`,
+                'ngrok-skip-browser-warning': 'true',
             },
             body: formData,
         });
@@ -83,6 +85,7 @@ export const deleteFromCollection = async (id) => {
             method: 'DELETE',
             headers: {
                 'Authorization': `Bearer ${accessToken}`,
+                'ngrok-skip-browser-warning': 'true',
             },
         });
 
