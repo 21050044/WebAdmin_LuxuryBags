@@ -8,7 +8,7 @@
 const config = {
   // Cập nhật theo yêu cầu của cậu. 
   // Nếu máy cậu đổi IP, phải vào đây sửa lại ngay lập tức nếu không App sẽ lỗi "Failed to fetch".
-  API_BASE_URL: 'https://f635ea9e296d.ngrok-free.app',
+  API_BASE_URL: 'http://47.129.220.3:8000',
 
   // API cho AI Generate (port 6000)
   AI_API_BASE_URL: 'http://192.168.23.254:8080',
