@@ -2,7 +2,7 @@ const config = {
 
   API_BASE_URL: 'https://indicated-climbing-marketing-explanation.trycloudflare.com',
 
-  AI_API_BASE_URL: 'http://192.168.23.254:8080',
+  AI_API_BASE_URL: 'https://4c5757b9dd01.ngrok-free.app',
 
   // Endpoints
   API_ENDPOINTS: {
