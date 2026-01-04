@@ -1,8 +1,8 @@
 const config = {
 
-  API_BASE_URL: 'https://indicated-climbing-marketing-explanation.trycloudflare.com',
+  API_BASE_URL: 'https://fairfield-prescription-wing-unix.trycloudflare.com',
 
-  AI_API_BASE_URL: 'https://4c5757b9dd01.ngrok-free.app',
+  AI_API_BASE_URL: 'https://00b228d072b6.ngrok-free.app ',
 
   // Endpoints
   API_ENDPOINTS: {
