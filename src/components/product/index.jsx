@@ -322,11 +322,11 @@ const ProductsPage = () => {
     }
 
     switch (sortBy) {
-      case 'name':
-        result.sort((a, b) => a.ten_tui.localeCompare(b.ten_tui));
-        break;
       case 'price-asc':
         result.sort((a, b) => a.gia_tien - b.gia_tien);
+        break;
+      case 'name':
+        result.sort((a, b) => a.ten_tui.localeCompare(b.ten_tui));
         break;
       case 'price-desc':
         result.sort((a, b) => b.gia_tien - a.gia_tien);
@@ -411,7 +411,7 @@ const ProductsPage = () => {
   };
 
   const handleImageError = (e, product) => {
-    console.error(`❌ Image failed to load for product: ${product.ten_tui}`);
+    console.error(`Image failed to load for product: ${product.ten_tui}`);
     e.target.src = PLACEHOLDER_IMAGE;
   };
 
@@ -483,9 +483,9 @@ const ProductsPage = () => {
                 onChange={(e) => setSortBy(e.target.value)}
                 className={styles.selectBox}
               >
-                <option value="name">Tên A-Z</option>
                 <option value="price-asc">Giá thấp → cao</option>
                 <option value="price-desc">Giá cao → thấp</option>
+                <option value="name">Tên A-Z</option>
                 <option value="stock">Tồn kho</option>
               </select>
             </div>
