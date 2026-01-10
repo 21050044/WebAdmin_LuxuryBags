@@ -1,6 +1,6 @@
 const config = {
 
-  API_BASE_URL: 'https://fairfield-prescription-wing-unix.trycloudflare.com',
+  API_BASE_URL: 'https://performing-alarm-afternoon-liverpool.trycloudflare.com',
 
   AI_API_BASE_URL: 'https://00b228d072b6.ngrok-free.app',
 
