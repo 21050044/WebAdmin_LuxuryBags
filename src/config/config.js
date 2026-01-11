@@ -2,7 +2,7 @@ const config = {
 
   API_BASE_URL: 'https://performing-alarm-afternoon-liverpool.trycloudflare.com',
 
-  AI_API_BASE_URL: 'https://00b228d072b6.ngrok-free.app',
+  AI_API_BASE_URL: 'https://28b7f6f2aa00.ngrok-free.app',
 
   // Endpoints
   API_ENDPOINTS: {
